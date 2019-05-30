@@ -1,0 +1,95 @@
+package Demosite;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import Consts.Constants;;
+
+public class Demosite {
+	 public static WebDriver driver;
+
+	
+	@BeforeClass
+	public static void setup() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		
+		driver= new ChromeDriver();
+	}
+//		@AfterClass
+//		public static void teardown() {
+//			driver.quit();
+		
+	@Test
+	public static void first() {
+		
+	FileInputStream file = null;
+	try {
+		file = new FileInputStream (Constants.Path_TestData +Constants.File_TestData);
+	} catch (FileNotFoundException e) {System.out.println(Constants.Path_TestData +Constants.File_TestData);}
+	
+		XSSFWorkbook workbook = null;
+		try { 
+			workbook = new XSSFWorkbook(file);
+		}
+		catch (IOException e) {}
+		XSSFSheet sheet = workbook.getSheetAt(0);
+		XSSFCell cell = sheet.getRow(0).getCell(0);
+		System.out.println(cell.getStringCellValue());
+		
+	
+		for (int i=0; i<6; i++) {
+			cell = sheet.getRow(i+1).getCell(0);
+			String user= (cell.getStringCellValue());
+			System.out.println(user);
+			cell = sheet.getRow(i+1).getCell(1);
+			String password= (cell.getStringCellValue());
+			System.out.println(password);
+		
+		}
+		
+		
+	}
+		
+		
+	}
+		
+
+	
+//	@Test
+//	public void demoTest() throws Exception {
+//		driver.manage().window().maximize();
+//		driver.get("http://thedemosite.co.uk/");
+//		WebElement addUser=driver.findElement(By.xpath("/html/body/div/center/table/tbody/tr[2]/td/div/center/table/tbody/tr/td[2]/p/small/a[3]"));
+//	addUser.click();
+//
+//	WebElement newName=driver.findElement(By.name("username"));
+//
+//	newName.sendKeys("NewUser");
+//	WebElement newPassword=driver.findElement(By.name("password"));
+//
+//	newPassword.sendKeys("Passy");
+//	WebElement save=driver.findElement(By.name("FormsButton2"));
+//   
+//	save.click();
+//	WebElement login=driver.findElement(By.xpath("/html/body/div/center/table/tbody/tr[2]/td/div/center/table/tbody/tr/td[2]/p/small/a[4]"));
+//	login.click();
+//	WebElement tryName=driver.findElement(By.name("username"));
+//	tryName.sendKeys("NewUser");
+//	WebElement tryPassword=driver.findElement(By.name("password"));
+//	tryPassword.sendKeys("Passy"); 
+//	WebElement login1=driver.findElement(By.name("FormsButton2"));
+//	login1.click();
+	

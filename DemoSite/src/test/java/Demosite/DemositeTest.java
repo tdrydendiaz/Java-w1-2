@@ -1,0 +1,66 @@
+package Demosite;
+
+import static org.junit.Assert.assertTrue;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DemositeTest {
+	
+		 public static WebDriver driver;
+			
+			@BeforeClass
+			public static void setup() {
+				System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Downloads\\chromedriver_win32\\chromedriver.exe");
+				
+				driver= new ChromeDriver();
+			
+			}
+
+			@AfterClass
+			public static void teardown() {
+				driver.quit();
+			}
+			
+			@Test
+			public void demoTest() throws Exception {
+				driver.manage().window().maximize();
+				driver.get("http://thedemosite.co.uk/");
+				WebElement addUser=driver.findElement(By.xpath("/html/body/div/center/table/tbody/tr[2]/td/div/center/table/tbody/tr/td[2]/p/small/a[3]"));
+			addUser.click();
+		
+			WebElement newName=driver.findElement(By.name("username"));
+
+			newName.sendKeys("NewUser");
+			WebElement newPassword=driver.findElement(By.name("password"));
+
+			newPassword.sendKeys("Passy");
+			WebElement save=driver.findElement(By.name("FormsButton2"));
+		   
+			save.click();
+			WebElement login=driver.findElement(By.xpath("/html/body/div/center/table/tbody/tr[2]/td/div/center/table/tbody/tr/td[2]/p/small/a[4]"));
+			login.click();
+			WebElement tryName=driver.findElement(By.name("username"));
+			tryName.sendKeys("NewUser");
+			WebElement tryPassword=driver.findElement(By.name("password"));
+			tryPassword.sendKeys("Passy"); 
+			WebElement login1=driver.findElement(By.name("FormsButton2"));
+			login1.click();
+			TimeUnit.SECONDS.sleep(20);
+			WebElement success=driver.findElement(By.xpath("/html/body/table/tbody/tr/td[1]/big/blockquote/blockquote/font/center/b"));
+			assertTrue(success.isDisplayed());
+	
+			}
+			
+		
+			
+			
+
+}

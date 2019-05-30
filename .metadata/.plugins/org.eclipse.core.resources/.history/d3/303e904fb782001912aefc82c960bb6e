@@ -1,0 +1,9 @@
+
+public class Constants {
+
+	public class Constants {
+		public static final String = "http://thedemosite.co.uk/";
+		public static final String File_TestData="DemoSiteDDT";
+		
+	}
+}

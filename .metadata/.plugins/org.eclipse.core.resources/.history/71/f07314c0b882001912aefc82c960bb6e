@@ -1,0 +1,9 @@
+package Runner;
+
+public class Constants {
+
+	public class Constants {
+		public static final String = "http://thedemosite.co.uk/addauser.php";
+		public static final String = "http://thedemosite.co.uk/login.php";
+		public static final String File_TestData="C:\\Users\\Admin\\Downloads\\DemoSiteDDT";
+}
