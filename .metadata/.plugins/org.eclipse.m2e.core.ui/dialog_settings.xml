@@ -4,11 +4,13 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.qa"/>
 			<item value="FirstExcel"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="BDD"/>
 			<item value="FirstExcel"/>
 		</list>
 		<list key="projectNameTemplate">

@@ -23,10 +23,10 @@ public class Tests {
 	
 	}
 
-//	@AfterClass
-//	public static void teardown() {
-//		driver.quit();
-//	}
+	@AfterClass
+	public static void teardown() {
+		driver.quit();
+	}
 	
 	
 	@Test
@@ -35,6 +35,7 @@ public class Tests {
 		driver.get("https://www.phptravels.net");
 		WebElement searchBar=driver.findElement(By.xpath("//*[@id=\"s2id_autogen3\"]/a/span[1]"));
 		searchBar.click();
+		searchBar.sendKeys("London");
 		searchBar.sendKeys("London");
 //		WebElement londonLink;
 ////		londonLink= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath( "/html/body/div[1]/section/div[2]/div/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/div/div/div[1]/div/div/a/i")));

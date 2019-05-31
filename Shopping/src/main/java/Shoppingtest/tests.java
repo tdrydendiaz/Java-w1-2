@@ -24,7 +24,6 @@ public class tests {
 		
 		driver= new ChromeDriver();	
 	
-	
 	}
 
 	@AfterClass
