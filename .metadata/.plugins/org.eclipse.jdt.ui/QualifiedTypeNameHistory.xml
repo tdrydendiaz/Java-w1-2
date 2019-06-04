@@ -20,4 +20,5 @@
 <fullyQualifiedTypeName name="cucumber.api.PendingException"/>
 <fullyQualifiedTypeName name="cucumber.api.java.en.When"/>
 <fullyQualifiedTypeName name="cucumber.api.java.en.Then"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
